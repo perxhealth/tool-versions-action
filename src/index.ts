@@ -3,7 +3,7 @@ import assert from "assert"
 
 import * as core from "@actions/core"
 
-async function run(): Promise<void> {
+export async function run(): Promise<void> {
   try {
     // Retrieve required inputs
     const location = core.getInput("location", { required: true })
