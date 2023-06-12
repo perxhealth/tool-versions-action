@@ -2,7 +2,7 @@
   "name": "@perxhealth/tool-versions-action",
   "description": "Parse .tool-versions and export environment variables",
   "version": "1.0.0",
-  "author": "Luke Rollans",
+  "author": "@perxhealth/open-source",
   "license": "MIT",
   "main": "dist/index.js",
   "homepage": "https://github.com/perxhealth/tool-versions-action",
