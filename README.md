@@ -3,8 +3,9 @@
 # `.tool-versions` Action
 
 This repository contains a **GitHub Action** allowing you to export environment
-variables whose name and value matches the contents of your `.tool-versions`
-file.
+variables and obtain Actions outputs as per your `.tool-versions` file.
+
+### Usage
 
 For example, if your repository contains a `.tool-versions` which looks like the
 following...
