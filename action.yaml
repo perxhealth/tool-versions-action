@@ -1,0 +1,15 @@
+name: '"Tool Versions" Action For GitHub Actions'
+description: Parse .tool-versions in to outputs and environment variables
+
+branding:
+  icon: share
+  color: blue
+
+inputs:
+  location:
+    description: Path on local disk where .tool-versions exists
+    optional: true
+
+runs:
+  using: node16
+  main: dist/index.js
