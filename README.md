@@ -48,7 +48,7 @@ steps:
 
 ### Inputs
 
-The Action currently expects a single input.
+The Action currently accepts a single, optional input.
 
 1. `location`
 
