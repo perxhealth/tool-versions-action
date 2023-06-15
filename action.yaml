@@ -9,6 +9,7 @@ inputs:
   location:
     description: Path on local disk where .tool-versions exists
     required: false
+    default: './.tool-versions'
 
 runs:
   using: node16

@@ -6,7 +6,7 @@ import * as core from "@actions/core"
 export async function run(): Promise<void> {
   try {
     // Retrieve required inputs
-    const location = core.getInput("location", { required: false }) || "./.tool-versions"
+    const location = core.getInput("location", { required: false })
 
     // Perform some basic input validation
     assert(
