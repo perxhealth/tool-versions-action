@@ -25,8 +25,8 @@ export async function run(): Promise<void> {
     }
 
     // Summarise for log output
-    core.info(`${toolVersions.length} outputs provided`)
-    core.info(`${toolVersions.length} environment variables exported`)
+    console.log(`${toolVersions.length} outputs provided`)
+    console.log(`${toolVersions.length} environment variables exported`)
   } catch (error) {
     if (error instanceof Error) {
       core.setFailed(error.message)
