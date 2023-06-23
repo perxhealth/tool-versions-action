@@ -50,7 +50,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             // Retrieve required inputs
-            const location = core.getInput("location", { required: true });
+            const location = core.getInput("location", { required: false });
             // Perform some basic input validation
             (0, assert_1.default)(fs_1.default.existsSync(location), `.tool-versions location specified in \`location\` input does not exist: ${location}`);
             // Read the entirety of `.tool-versions` in to memory and split it up by line
@@ -61,9 +61,6 @@ function run() {
                 core.setOutput(`${tool}_version`, version);
                 core.exportVariable(`${tool.toUpperCase()}_VERSION`, version);
             }
-            // Summarise for log output
-            core.notice(`${toolVersions.length} outputs provided`);
-            core.notice(`${toolVersions.length} environment variables exported`);
         }
         catch (error) {
             if (error instanceof Error) {
