@@ -23,10 +23,6 @@ export async function run(): Promise<void> {
       core.setOutput(`${tool}_version`, version)
       core.exportVariable(`${tool.toUpperCase()}_VERSION`, version)
     }
-
-    // Summarise for log output
-    console.log(`${toolVersions.length} outputs provided`)
-    console.log(`${toolVersions.length} environment variables exported`)
   } catch (error) {
     if (error instanceof Error) {
       core.setFailed(error.message)
