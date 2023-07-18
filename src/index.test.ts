@@ -12,7 +12,7 @@ describe("run", () => {
   beforeAll(() => {
     fs.writeFileSync(
       ".tool-versions",
-      "elixir 50.10.0\nerlang 42.3.4\nnodejs 9000.123.123\npnpm 1.2.3\nruby 4.5.6"
+      "elixir 50.10.0\nerlang 42.3.4\nnodejs 9000.123.123\npnpm 1.2.3\nruby 4.5.6\n"
     )
   })
 
@@ -26,15 +26,13 @@ describe("run", () => {
       vi.mocked(core).getInput.mockReturnValueOnce(".tool-versions")
     })
 
-    it("summarises the result", async () => {
-      await run()
-      expect(vi.mocked(core).notice).toHaveBeenCalledWith("5 outputs provided")
-      expect(vi.mocked(core).notice).toHaveBeenCalledWith("5 environment variables exported")
-    })
-
     describe("outputs", () => {
       beforeEach(async () => {
         await run()
+      })
+
+      it("finds five tools", () => {
+        expect(vi.mocked(core).setOutput).toHaveBeenCalledTimes(5)
       })
 
       it("contains elixir", () => {
@@ -71,6 +69,10 @@ describe("run", () => {
     describe("exports", () => {
       beforeEach(async () => {
         await run()
+      })
+
+      it("finds five tools", () => {
+        expect(vi.mocked(core).setOutput).toHaveBeenCalledTimes(5)
       })
 
       it("contains elixir", () => {

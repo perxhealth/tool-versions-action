@@ -19,9 +19,11 @@ export async function run(): Promise<void> {
 
     // Loop over each entry and provide the environment variable and output
     for (const entry of toolVersions) {
-      const [tool, version] = entry.split(" ")
-      core.setOutput(`${tool}_version`, version)
-      core.exportVariable(`${tool.toUpperCase()}_VERSION`, version)
+      if (entry.length > 0) {
+        const [tool, version] = entry.split(" ")
+        core.setOutput(`${tool}_version`, version)
+        core.exportVariable(`${tool.toUpperCase()}_VERSION`, version)
+      }
     }
   } catch (error) {
     if (error instanceof Error) {

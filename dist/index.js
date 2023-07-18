@@ -57,9 +57,11 @@ function run() {
             const toolVersions = fs_1.default.readFileSync(location, "utf-8").split(/\r?\n/);
             // Loop over each entry and provide the environment variable and output
             for (const entry of toolVersions) {
-                const [tool, version] = entry.split(" ");
-                core.setOutput(`${tool}_version`, version);
-                core.exportVariable(`${tool.toUpperCase()}_VERSION`, version);
+                if (entry.length > 0) {
+                    const [tool, version] = entry.split(" ");
+                    core.setOutput(`${tool}_version`, version);
+                    core.exportVariable(`${tool.toUpperCase()}_VERSION`, version);
+                }
             }
         }
         catch (error) {
