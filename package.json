@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.13",
-    "@vercel/ncc": "^0.36.1",
+    "@vercel/ncc": "^0.38.1",
     "@vitest/coverage-v8": "^0.34.4",
     "eslint": "^8.56.0",
     "eslint-config-perxhealth": "^1.0.5",
