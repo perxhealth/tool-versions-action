@@ -39,6 +39,6 @@
     "eslint-config-perxhealth": "^1.0.5",
     "prettier": "^3.2.5",
     "typescript": "^5.1.6",
-    "vitest": "^1.3.0"
+    "vitest": "^1.3.1"
   }
 }
