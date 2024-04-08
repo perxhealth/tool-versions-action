@@ -8,9 +8,10 @@
   "homepage": "https://github.com/perxhealth/tool-versions-action",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write '**/*.ts'",
-    "format-check": "prettier --check '**/*.ts'",
-    "lint": "eslint src/**/*.ts",
+    "format": "biome format src test --write",
+    "format-check": "biome format src test",
+    "lint": "biome lint src test --apply",
+    "lint-check": "biome lint src test",
     "package": "tsc && ncc build --license licenses.txt",
     "test": "vitest --coverage"
   },
@@ -32,12 +33,10 @@
     "@actions/core": "^1.10.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.6.1",
     "@types/node": "^20.11.30",
     "@vercel/ncc": "^0.38.1",
     "@vitest/coverage-v8": "^1.4.0",
-    "eslint": "^8.57.0",
-    "eslint-config-perxhealth": "^1.0.5",
-    "prettier": "^3.2.5",
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   }
