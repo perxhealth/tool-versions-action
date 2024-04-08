@@ -1,5 +1,5 @@
-import fs from "fs"
-import assert from "assert"
+import assert from "node:assert"
+import fs from "node:fs"
 
 import * as core from "@actions/core"
 
@@ -11,7 +11,7 @@ export async function run(): Promise<void> {
     // Perform some basic input validation
     assert(
       fs.existsSync(location),
-      `.tool-versions location specified in \`location\` input does not exist: ${location}`
+      `.tool-versions location specified in \`location\` input does not exist: ${location}`,
     )
 
     // Read the entirety of `.tool-versions` in to memory and split it up by line

@@ -1,7 +1,16 @@
-import fs from "fs"
+import fs from "node:fs"
 
 import core from "@actions/core"
-import { vi, describe, beforeAll, afterAll, beforeEach, it, expect } from "vitest"
+
+import {
+  afterAll,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from "vitest"
 
 import { run } from "./"
 
@@ -12,7 +21,7 @@ describe("run", () => {
   beforeAll(() => {
     fs.writeFileSync(
       ".tool-versions",
-      "elixir 50.10.0\nerlang 42.3.4\nnodejs 9000.123.123\npnpm 1.2.3\nruby 4.5.6\n"
+      "elixir 50.10.0\nerlang 42.3.4\nnodejs 9000.123.123\npnpm 1.2.3\nruby 4.5.6\n",
     )
   })
 
@@ -37,31 +46,36 @@ describe("run", () => {
 
       it("contains elixir", () => {
         expect(vi.mocked(core).setOutput).toHaveBeenCalledWith(
-          "elixir_version", "50.10.0"
+          "elixir_version",
+          "50.10.0",
         )
       })
 
       it("contains erlang", () => {
         expect(vi.mocked(core).setOutput).toHaveBeenCalledWith(
-          "erlang_version", "42.3.4"
+          "erlang_version",
+          "42.3.4",
         )
       })
 
       it("contains nodejs", () => {
         expect(vi.mocked(core).setOutput).toHaveBeenCalledWith(
-          "nodejs_version", "9000.123.123"
+          "nodejs_version",
+          "9000.123.123",
         )
       })
 
       it("contains pnpm", () => {
         expect(vi.mocked(core).setOutput).toHaveBeenCalledWith(
-          "pnpm_version", "1.2.3"
+          "pnpm_version",
+          "1.2.3",
         )
       })
 
       it("contains ruby", () => {
         expect(vi.mocked(core).setOutput).toHaveBeenCalledWith(
-          "ruby_version", "4.5.6"
+          "ruby_version",
+          "4.5.6",
         )
       })
     })
@@ -77,31 +91,36 @@ describe("run", () => {
 
       it("contains elixir", () => {
         expect(vi.mocked(core).exportVariable).toHaveBeenCalledWith(
-          "ELIXIR_VERSION", "50.10.0"
+          "ELIXIR_VERSION",
+          "50.10.0",
         )
       })
 
       it("contains erlang", () => {
         expect(vi.mocked(core).exportVariable).toHaveBeenCalledWith(
-          "ERLANG_VERSION", "42.3.4"
+          "ERLANG_VERSION",
+          "42.3.4",
         )
       })
 
       it("contains nodejs", () => {
         expect(vi.mocked(core).exportVariable).toHaveBeenCalledWith(
-          "NODEJS_VERSION", "9000.123.123"
+          "NODEJS_VERSION",
+          "9000.123.123",
         )
       })
 
       it("contains pnpm", () => {
         expect(vi.mocked(core).exportVariable).toHaveBeenCalledWith(
-          "PNPM_VERSION", "1.2.3"
+          "PNPM_VERSION",
+          "1.2.3",
         )
       })
 
       it("contains ruby", () => {
         expect(vi.mocked(core).exportVariable).toHaveBeenCalledWith(
-          "RUBY_VERSION", "4.5.6"
+          "RUBY_VERSION",
+          "4.5.6",
         )
       })
     })
@@ -123,7 +142,7 @@ describe("run", () => {
 
     it("error message", () => {
       expect(vi.mocked(core).setFailed).toHaveBeenCalledWith(
-        ".tool-versions location specified in `location` input does not exist: i-dont-exist"
+        ".tool-versions location specified in `location` input does not exist: i-dont-exist",
       )
     })
   })
