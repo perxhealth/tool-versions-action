@@ -23,7 +23,7 @@ devDependencies:
     specifier: ^3.2.0
     version: 3.2.4(vitest@3.2.4)
   typescript:
-    specifier: ^5.9.2
+    specifier: ^5.9.3
     version: 5.9.3
   vitest:
     specifier: ^3.2.0
