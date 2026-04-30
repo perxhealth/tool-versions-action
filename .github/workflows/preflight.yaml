@@ -17,7 +17,7 @@ jobs:
       - name: Node setup
         uses: actions/setup-node@v6
         with:
-          node-version: 20.9.0
+          node-version: 24.0.0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.2.0
@@ -41,7 +41,7 @@ jobs:
       - name: Node setup
         uses: actions/setup-node@v6
         with:
-          node-version: 20.9.0
+          node-version: 24.0.0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.2.0
@@ -71,7 +71,7 @@ jobs:
       - name: Node setup
         uses: actions/setup-node@v6
         with:
-          node-version: 20.9.0
+          node-version: 24.0.0
 
       - name: Download deps
         run: pnpm install
@@ -95,7 +95,7 @@ jobs:
       - name: Node setup
         uses: actions/setup-node@v6
         with:
-          node-version: 20.9.0
+          node-version: 24.0.0
 
       - name: Download deps
         run: pnpm install
