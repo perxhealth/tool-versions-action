@@ -10,7 +10,7 @@
     "build": "tsc",
     "format": "biome format src test --write",
     "format-check": "biome format src test",
-    "lint": "biome lint src test --apply",
+    "lint": "biome lint src test --write",
     "lint-check": "biome lint src test",
     "package": "tsc && ncc build --license licenses.txt",
     "test": "vitest --coverage"
