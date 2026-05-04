@@ -30,7 +30,7 @@
     "url": "https://github.com/perxhealth/tool-versions-action/issues"
   },
   "dependencies": {
-    "@actions/core": "^2.0.1"
+    "@actions/core": "^3.0.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.8",
